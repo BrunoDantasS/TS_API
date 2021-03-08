@@ -22,15 +22,18 @@ export class User {
   email: string;
 
   @Column()
-  idade: number;
+  age: number;
 
   @Column()
-  peso: number;
+  weight: number;
 
   @Column({
     type: "enum",
     enum: Ethnicity,
   })
   ethnicity: number;
+
+  @Column()
+  password: string;
 
 }

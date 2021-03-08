@@ -1,6 +1,8 @@
 import { Router, Request, Response } from "express";
 import { deleteAdress, getAdress, getAdressById, postAdress, putAdress } from "./controller/AdressesControler";
-import { getUsers, postUser, getUserById, putUser, deleteUser } from "./controller/UserController";
+import { getUsers, postUser, getUserById, putUser, deleteUser, login } from "./controller/UserController";
+import { auth } from "./middlewares/auth"
+
 
 const routes = Router();
 
@@ -9,6 +11,10 @@ routes.get('/', (request: Request, response: Response) => {
         message: 'Hello World'
     });
 });
+
+routes.post('/session', login)
+
+routes.use(auth)
 
 routes.post('/user', postUser);
 routes.get('/user', getUsers);

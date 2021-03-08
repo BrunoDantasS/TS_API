@@ -1,3 +1,4 @@
+import "./config/env";
 import "reflect-metadata";
 import * as express from "express";
 import { createConnection } from "typeorm";
