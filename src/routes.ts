@@ -12,11 +12,11 @@ routes.get('/', (request: Request, response: Response) => {
     });
 });
 
-routes.post('/session', login)
+routes.post('/login', login)
+routes.post('/register', postUser);
 
 routes.use(auth)
 
-routes.post('/user', postUser);
 routes.get('/user', getUsers);
 routes.get('/user/:id', getUserById);
 routes.put('/user/:id', putUser);

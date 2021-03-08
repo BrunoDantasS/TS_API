@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import * as jwt from "jsonwebtoken";
 
 export const auth = async (request: Request, response: Response, next: NextFunction) => {
+  
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
