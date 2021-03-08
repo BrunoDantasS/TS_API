@@ -4,7 +4,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 export class Adresses {
 
   @PrimaryGeneratedColumn()
-    id: number;
+  id: number;
 
   @Column()
   adress: string;
@@ -16,13 +16,12 @@ export class Adresses {
   complement: string;
 
   @Column()
-  zipcode: number;
+  zipcode: string;
 
   @Column()
   city: string;
 
   @Column()
   estate: string;
-
 
 }
