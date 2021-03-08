@@ -1,27 +1,36 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
+enum Ethnicity {
+  Option1,
+  Option2,
+  Option3,
+}
+
 @Entity()
 export class User {
 
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    name: string;
+  @Column()
+  name: string;
 
-    @Column()
-    phone: number;
+  @Column()
+  phone: number;
 
-    @Column()
-    email: string;
+  @Column()
+  email: string;
 
-    @Column()
-    idade: number;
+  @Column()
+  idade: number;
 
-    @Column()
-    peso: number;
+  @Column()
+  peso: number;
 
-    @Column()
-    ethnicity: string;
+  @Column({
+    type: "enum",
+    enum: Ethnicity,
+  })
+  ethnicity: number;
 
 }
